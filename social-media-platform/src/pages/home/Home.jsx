@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom'; //for routing
 const Home = () => {
   const { currentUser } = useContext(UserContext);
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     if (currentUser === null) {
       navigate('/login');
@@ -27,7 +27,7 @@ const Home = () => {
       <Topbar />
       <div className="homeContainer">
         <Sidebar />
-        <Feed username={currentUser.username} />
+        <Feed userId={currentUser._id} />
         <Rightbar />
       </div>
     </>
